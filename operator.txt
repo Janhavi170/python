@@ -1,0 +1,357 @@
+In [1]: # memory address related
+In [2]: p = 'python'
+In [3]: k = 'python'
+In [4]: id(p)
+
+Out[4]:2509637924528
+In [5]: id(k)
+
+Out[5]:2509637924528
+In [6]: # over here memory location is same
+In [7]: py_list = [1,2,3,4]
+In [8]: p_list = [1,2,3,4]
+In [9]: id(py_list)
+
+Out[9]:2509681444416
+In [10]: id(p_list)
+
+Out[10]:2509698386816
+In [11]: # here we oberved that the content of p_list and py_list is same only time was different that's why the id was different
+         # but now when we defined both the things equal it showed us same id
+
+         # the same happpened with tuple also
+In [12]: py_list = p_list
+In [13]: id(py_list)
+
+Out[13]:2509698386816
+In [14]: id(p_list)
+
+Out[14]:2509698386816
+In [15]: py_tuple = (1,2,3,4)
+In [16]: p_tuple = (1,2,3,4)
+In [17]: id(py_tuple)
+
+Out[17]:2509698378864
+In [18]: id(p_tuple)
+
+Out[18]:2509698378624
+In [19]: py_tuple = p_tuple
+In [20]: id(py_tuple)
+
+Out[20]:2509698378624
+In [21]: id(p_tuple)
+
+Out[21]:2509698378624
+In [22]: # OPERATORS
+         # is memory based operator
+         # == value based operator
+In [23]: a = 5000
+In [24]: b = 5000
+In [25]: a is b
+
+Out[25]:False
+In [26]: # as is will check the memory location
+         # = checks with the value
+In [27]: a == b
+
+Out[27]:True
+In [28]: a = 10
+         b = 10
+In [29]: a is b
+
+Out[29]:True
+In [30]: # above is something about four digit and 2 digit number
+In [31]: # 1.Arithmatic operator
+         # 2.comparison operator
+         # 3.logical operator
+         # 4.membership operator
+         # 5.assignment operator
+         # 6.identity operator
+         # 7.bitwise operator
+         # 8.ternary operator
+In [32]: # arithmatic operator
+         # + if both are int/float it'll do addtion or if it is str it'll concatenate the given strings
+         # * if both are int/float it'll do multiplication or if it is str*int it'll duplicate
+         #-
+         #/
+         # // floor division gives answer value as floor if it is point
+         # ** exponent it mutliplies the number by given value
+         # % modulo it gives the remainder as output
+In [33]: 7/5
+
+Out[33]:1.4
+In [34]: # 2 ceiling it is
+         # 1.9
+         #-
+         #-
+         #-
+         # 1.2
+         #1.1
+         #1 floor value
+         # so for us when we do floor division it'll give output as 1
+In [35]: 7//5
+
+Out[35]:1
+In [36]: 7852/58
+
+Out[36]:135.3793103448276
+In [37]: 7852//58
+
+Out[37]:135
+In [38]: round(45.9)
+
+Out[38]:46
+In [39]: # round off is giving the nearest value
+         # and floor division it gives the base value and round off is different
+
+
+         # round off--- is giving complete value or making it whole -- 12.4 will give 12
+         # floor --- is giving the floor/base value        -- 12.4 will give 12
+         # ceiln --- is giving the ceil or upper value       -- 12.4 will give 13
+In [40]: round(45.4)
+
+Out[40]:45
+In [41]: round(45.6)
+
+Out[41]:46
+In [42]: round(45.2)
+
+Out[42]:45
+In [43]: round(45.55)
+
+Out[43]:46
+In [44]: round(45.49)
+
+Out[44]:45
+In [45]: import math
+In [46]: math.ceil(12.4)
+
+Out[46]:13
+In [47]: round(12.4)
+
+Out[47]:12
+In [48]: math.floor(12.4)
+
+Out[48]:12
+In [49]: 5%2
+
+Out[49]:1
+In [50]: 9%3
+
+Out[50]:0
+In [51]: 6%4
+
+Out[51]:2
+In [52]: 5**6
+
+Out[52]:15625
+In [53]: 2**3
+
+Out[53]:8
+In [54]: 3**8
+
+Out[54]:6561
+In [55]: # comparison operator
+         #a>b -- a is greater than b
+         #a<b -- a is less that b
+         #a>=b -- a is greater than equal to b
+         #a<=b -- a is less that equal to b
+         #a!=b -- a is not equal to b
+         #== -- a is equal to b
+In [56]: a = 500
+In [57]: b = 900
+In [58]: a>b
+
+Out[58]:False
+In [59]: a<b
+
+Out[59]:True
+In [60]: a!=b
+
+Out[60]:True
+In [61]: c = 'python'
+In [62]: a!=c
+
+Out[62]:True
+In [63]: a==b
+
+Out[63]:False
+In [64]: d = 500
+In [65]: a == 500
+
+Out[65]:True
+In [66]: # logical operator
+        # AND both condtions needs to be satisfied then only output is true otherwise it's false
+        # there might be several conditions but if any of them is not satisfied then it's false
+
+        # OR if any of the conditions is satisfied then it'll show the output as true
+        # if both conditons are not satisfied then it'll show false
+
+        # NOT inversion of obtained result
+        # 0--1
+        # 1--0
+
+        #A     B        AND OR
+        #0     0        0 0
+        #0     1        0 1
+        #1     0        0 1
+        #1     1        1 1
+In [67]: a
+
+Out[67]:500
+In [68]: b
+
+Out[68]:900
+In [69]: c
+
+Out[69]:'python'
+In [70]: a<b and c.isalpha()
+
+Out[70]:True
+In [71]: a>b and c.isalpha()
+
+Out[71]:False
+In [72]: True and True and True and True and False
+
+Out[72]:False
+In [73]: True and True and True and True and True
+
+Out[73]:True
+In [74]: True or True or True or True or False
+
+Out[74]:True
+In [75]: True and True and True and True and True
+
+Out[75]:True
+In [76]: a>b or c.isalpha()
+
+Out[76]:True
+In [77]: a<b or c.isalpha()
+
+Out[77]:True
+In [78]: not(a<b and c.isalpha())
+Out[78]:False
+In [79]: not(True and True and True and True and False)
+
+Out[79]:True
+In [80]: not True
+
+Out[80]:False
+In [81]: not False
+
+Out[81]:True
+In [82]: # membership operator--- is used to check if value is present or not
+         # as name of the operator suggests it checks if the given value is member of the group or not
+         # and groups like list, tuple, set, dict,str
+
+         # in-- it is case sensitive
+         # not in
+In [83]: 'p'in 'python'
+
+Out[83]:True
+In [84]: 'P' in 'python'
+
+Out[84]:False
+In [85]: p = [10,20,30,40,50]
+In [86]: 60 in p
+
+Out[86]:False
+In [87]: 20 in p
+
+Out[87]:True
+In [88]: d = {'a':1, 'b':2, 'c':3}
+In [89]: 'b' in d
+
+Out[89]:True
+In [90]: 'f' in d
+
+Out[90]:False
+In [91]: 10.in (d.values())
+
+Out[91]:False
+In [92]: 1.in (d.values())
+
+Out[92]:True
+In [93]: 'a'in (d.keys())
+
+Out[93]:True
+In [94]: p
+
+Out[94]:[10, 20, 30, 40, 50]
+In [95]: 100 not in p
+
+Out[95]:True
+In [96]: 20 not in p
+
+Out[96]:False
+In [97]: # assignment operator =
+         # value assign =
+         # equality check (compare) ==
+In [98]: a = 'Scodeen'
+In [99]: a
+
+Out[99]:'Scodeen'
+In [100]: p = 'Scodeen'
+In [101]: a == p
+
+Out[101]:True
+In [102]: a = 100
+In [103]: b = 200
+In [104]: a == b
+
+Out[104]:False
+In [105]: # identity operator is
+             # gives the value of ID what is it karke like for id(a) means what is id/memory location for a
+In [106]: a = 50
+In [111]: b = 50
+In [112]: id(a)
+
+Out[112]:2509598781264
+Inid(b)
+    [113]:
+Out[113]:2509598781264
+In [114]: a is b
+
+Out[114]:True
+In [ ]: # is --- memory location
+          # ==   value check
+In [ ]: # bitwise operator
+        # operation are performed in bitwise format in short in binary and then again output is given in decimal
+In [115]: bin(1200)
+
+Out[115]:'0b10010110000'
+In [119]: oct(1200)
+
+Out[119]:'0o2260'
+In [122]: bin(int(1200))
+
+Out[122]:'0b10010110000'
+In [125]: bin(0o2260)
+
+Out[125]:'0b10010110000'
+In [126]: 10 & 2
+
+Out[126]:2
+In [127]: 10 | 2
+
+Out[127]:10
+In [ ]: # 10 1010
+          # 2 0010
+          #And 0010
+          # or 1010
+In [ ]: # ternary operator
+        # if else
+In [128]: x= 100
+In [129]: y= 200
+In [130]: z= x if x<y else y
+In [131]: z
+
+Out[131]:100
+In [132]: z= x if x>y else y
+In [133]: z
+
+Out[133]:200
+In [ ]:
+In [ ]:
+In [ ]:
+
